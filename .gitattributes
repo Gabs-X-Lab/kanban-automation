@@ -1,0 +1,4 @@
+# Scripts e workflows rodam em runners Linux: manter LF mesmo em checkouts no Windows.
+*.sh  text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
