@@ -8,7 +8,7 @@
 #   Fase 3: Issue em Backlog/To Do com branch vinculada → --linked       (→ In Progress)
 #
 # Merge → Done, Issue nova → Backlog e reaberta → To Do continuam com os workflows nativos.
-# Custo da opção: atraso de até um intervalo do cron (mínimo do GitHub: 5 minutos).
+# Custo da opção: atraso de até um intervalo do cron (mínimo do GitHub: 5 minutos) + fila do GitHub.
 #
 # Configuração (Settings → Secrets and variables → Actions):
 #   Secret   PROJECT_APP_PRIVATE_KEY   chave do GitHub App (o App fica instalado só nos repositórios do produto)
@@ -20,8 +20,8 @@ name: Kanban reconcile
 
 on:
   schedule:
-    # Lab: a cada 5 minutos (mínimo do GitHub), todos os dias. Na empresa, ajustar ao custo aceito.
-    - cron: "*/5 * * * *"
+    # A cada 15 min, 8h–18h (Brasil, UTC−3) de segunda a sexta. Cron em UTC.
+    - cron: "*/15 11-21 * * 1-5"
   workflow_dispatch:
 
 permissions:
