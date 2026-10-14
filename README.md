@@ -34,3 +34,7 @@ Issue nova → Backlog, merge → Done e Issue reaberta → To Do ficam com os *
 3. *Actions → Kanban reconcile → Run workflow* para testar na hora.
 
 `scripts/project-status.sh` é uma cópia do script do laboratório (variável `TARGET_REPOSITORY` para operar sobre outro repositório).
+
+## Observação sobre o agendamento
+
+O GitHub registra o `schedule` a partir de um push na branch padrão. Depois de desligar e religar o workflow (ou logo após criar o repositório), o cron pode não disparar até o próximo push — no laboratório, ficou 28 minutos sem nenhuma execução agendada. Para testar na hora, use *Run workflow*.
